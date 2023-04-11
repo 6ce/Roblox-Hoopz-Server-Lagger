@@ -38,7 +38,7 @@ end)
 task.spawn(function()
     while task.wait(1) do
         if getgenv().Enabled == true then
-            task.defer(Lag)
+            task.spawn(Lag)
         end
     end
 end)
