@@ -30,7 +30,7 @@ local Lag = function()
 end
 
 UIS.InputBegan:Connect(function(Key, GPE)
-    if GPE == false and Key.KeyCode.P then
+    if GPE == false and Key.KeyCode == Enum.KeyCode.P then
         getgenv().Enabled = not getgenv().Enabled
     end
 end)
