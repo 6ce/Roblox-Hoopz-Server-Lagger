@@ -36,7 +36,9 @@ UIS.InputBegan:Connect(function(Key, GPE)
 end)
 
 task.spawn(function()
-    while task.wait(1) and getgenv().Enabled == true do
-        task.defer(Lag)
+    while task.wait(1) do
+        if getgenv().Enabled == true then
+            task.defer(Lag)
+        end
     end
 end)
