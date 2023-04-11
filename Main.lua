@@ -1,6 +1,9 @@
-getgenv().Enabled = true -- change to false to disable
+-- // Press P to toggle
+
+getgenv().Enabled = true
 
 local Network = game:GetService("NetworkClient")
+local UIS = game:GetService("UserInputService")
 local Update = game:GetService("RobloxReplicatedStorage").UpdatePlayerBlockList
 
 local Lag = function()
@@ -26,6 +29,14 @@ local Lag = function()
     Update:FireServer(Main)
 end
 
-while task.wait(1) and getgenv().Enabled == true do
-    task.spawn(Lag)
-end
+UIS.InputBegan:Connect(function(Key, GPE)
+    if GPE == false and Key.KeyCode.P then
+        getgenv().Enabled = not getgenv().Enabled
+    end
+end)
+
+task.spawn(function()
+    while task.wait(1) and getgenv().Enabled == true do
+        task.defer(Lag)
+    end
+end)
