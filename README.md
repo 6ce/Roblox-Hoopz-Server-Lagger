@@ -1,4 +1,4 @@
-# Roblox-Server-Lagger
+# Hoopz-Server-Lagger
 lags roblox servers (originally made/released by https://v3rmillion.net/showthread.php?tid=1168732 to my knowledge, just rewritten)
 
 # Usage
